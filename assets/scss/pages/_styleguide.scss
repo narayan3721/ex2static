@@ -1,0 +1,77 @@
+.styleGuide {
+    display: flex;
+}
+
+.sidebar {
+    border-right: 1px solid rgba(0,0,0,.05);
+    max-width: 220px;
+    flex-basis: 220px;
+    max-height: 100vh;
+    overflow-y: auto;
+        a {
+            font-size: 16px;
+            color:rgba(0,0,0,.75);
+            display: block;
+            padding: 8px 15px;
+            &:hover {
+                background-color: #f8f8f8;
+                color:#000;
+            }
+        }
+    h3 {
+        padding: 0 15px;
+    }
+}
+.content {
+    width: calc(100% - 230px);
+    padding: 20px;
+    details > div {
+        padding: 30px 20px;
+    }
+    summary {
+        display: list-item;
+        margin: -15px;
+        padding: 15px;
+        background: #f9f9f9;
+        cursor: pointer;
+        outline: none;
+        details[open] & {
+            border-bottom: 1px solid #ddd;
+        }
+    }
+    .spacer {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        padding: 15px;
+    }
+    .fontSize {
+        background: var(--info);
+        padding: 4px 10px;
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--white);
+        letter-spacing: 1px;
+        border-radius: 4px;
+        display: inline-block;
+        vertical-align: 5px;
+    }
+    .colors {
+        display: flex;
+        flex-wrap: wrap;
+        p {
+            min-width: 150px;
+            height: 40px;
+            margin-right: 20px;
+        }
+        .blue {
+            background-color: var(--primary);
+        }
+        .gray {
+            background-color: var(--gray);
+        }
+        .black {
+            background-color: var(--gray-dark);
+        }
+
+    }
+}
