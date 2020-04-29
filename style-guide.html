@@ -7,12 +7,19 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="apple-touch-icon" href="icon.png">
+  <!-- Fonts Preloading For Faster Access -->
+  <link rel="preload" href="/assets/fonts/opensans-regular-webfont.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/opensans-semibold-webfont.woff2" as="font" type="font/woff2" crossorigin>
   <!-- Place favicon.ico in the root directory -->
   <link rel="stylesheet" href="assets/scss/main.css">
   <meta name="theme-color" content="#fafafa">
 </head>
 
 <body>
+  <header class="styleGuide_header">
+      <h1>Ex2 UI</h1>
+      <a href="#" class="btn is-outline is-sbtn is-rounded">Download Code</a>
+  </header>
   <main class="styleGuide">
   <aside class="sidebar">
       <h3>Components</h3>
@@ -149,7 +156,7 @@
       <!--Introduction-->
 
       <!--Typography-->
-      <details id="typography" class="spacer">
+      <details id="typography" class="spacer" open>
         <summary>Typography</summary>
         <div>
             <h1>Heading 1 <span class="fontSize">36px</span></h1>
@@ -172,7 +179,7 @@
       <details id="typography" class="spacer" open>
         <summary>Color</summary>
         <div>
-          <h3 style="width: 100%;">Primary Colors</h3>
+          <h5 style="width: 100%;">Primary Colors</h5>
           <div class="colors">
             <div for="blue">
               <p class="blue"></p>
@@ -191,18 +198,30 @@
       </details>
       <!--Color-->
       
-
       <!--Buttons-->
-      <details id="buttons" class="spacer">
+      <details id="buttons" class="spacer" open>
           <summary>Buttons</summary>
-          <h4>Buttons Type</h4>
-          <a href="#" class="btn btn-primary">Anchor Button</a>
-          <input type="submit" class="btn btn-primary" value="Input Button">
-          <button class="btn btn-primary">Button Type</button>
-          <span class="btn btn-primary">Span or Div Button</span>
-          <h4>Main Buttons</h4>
-          <button class="btn btn-primary">Primary</button>
-          <button class="btn btn-secondary">Secondary</button>
+          <div>
+          <h5>Buttons Type</h5>
+          <button class="btn">Button Type</button>
+          <a href="#" class="btn is-flat primary">Anchor Button</a>
+          <input type="submit" class="btn is-flat primary" value="Input Button">
+          <button class="btn is-flat primary">Button Type</button>
+          <span class="btn is-flat primary">Span or Div Button</span><br><br><hr>
+          <h5>Buttons Variations</h5>
+          <button class="btn is-flat primary">Primary</button>
+          <button class="btn is-flat secondary">Secondary</button>
+          <button class="btn is-flat primary is-rounded">Primary</button>
+          <button class="btn is-flat secondary is-rounded">Secondary</button>
+          <button class="btn is-outline o-primary">Primary</button>
+          <button class="btn is-outline o-secondary">Secondary</button>
+          <button class="btn is-outline o-primary is-rounded">Primary</button>
+          <button class="btn is-outline o-secondary is-rounded">Secondary</button><br><br><hr>
+          <h5>Small Buttons</h5>
+          <button class="btn is-sbtn">Primary</button>
+          <button class="btn is-flat primary is-sbtn">Secondary</button>
+          <button class="btn is-outline o-secondary is-rounded is-sbtn">Secondary</button>
+          </div>
       </details>
       <!--Buttons-->
 

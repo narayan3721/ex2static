@@ -1,28 +1,106 @@
-.btn {
+// theming button color
+$btn-color: (
+    "primary": #007bff,
+    "secondary": #dc3545,
+    "dark": #000
+);
+
+// Default values
+$btn-padding: 0.5rem 1rem !default;
+$btn-padding-small: 0.25rem 0.75rem !default;
+$btn-font-size : 0.85rem !default;
+$btn-font-size-small: 0.8rem !default;
+
+// Default button css
+@mixin btn-reset() {
+    font-size:$btn-font-size;
+    padding: $btn-padding;
     display: inline-block;
     font-weight: 400;
-    color: #212529;
+    color: var(--text-color);
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
     user-select: none;
-    background-color: transparent;
+    background-color: #ddd;
     border: 1px solid transparent;
-    padding: .375rem .75rem;
-    font-size: 1rem;
     line-height: 1.5;
-    border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    outline: none;
+    border-radius: 0.25rem;
 }
 
-.btn-primary {
-    color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
-}
-.btn-secondary {
-    background-color: #ff0000;
-    border-color: #ff0000;
-    color: #fff;
+// Types of button flat, outline , rounded , small
+@mixin btn($btn-type) {
+    @if $btn-type == 'flat' {
+        border-radius: 0;
+    }
+    @else if $btn-type == 'rounded' {
+        border-radius: 50px;
+    }
+    @else if $btn-type == 'outline' {
+        background-color: transparent;
+    }
+    @else if $btn-type == 'small-btn' {
+        padding: $btn-padding-small;
+        font-size: $btn-font-size-small;
+    }
 }
 
+// Automatically pick color
+@function set-text-color($color) {
+    @if (lightness($color) > 60) {
+        @return #000000;
+    } @else {
+        @return #ffffff;
+    }
+}
+
+// Background color in loop like primary, secondary
+@mixin btnBg($bgcolor: true) {
+    @if $bgcolor {
+        @each $color, $value in $btn-color {
+            &.#{$color} {
+                background-color: $value;
+                color: set-text-color($value);
+                //on hover it darkens the bg color inbuilt scss function darken()
+                &:hover {
+                    background-color: darken($value,8%);
+                }
+            }
+        }
+    } @else if {
+        @each $color, $value in $btn-color {
+            &.o-#{$color} {
+                color: $value;
+                border-color: $value;
+                &:hover {
+                    background-color: $value;
+                    color: var(--white);
+                }
+            }
+        }
+    }
+
+
+}
+
+// Finally buttons
+.btn {
+    @include btn-reset();
+}
+.is-flat {
+    @include btn('flat');
+    @include btnBg($bgcolor: true);
+}
+.is-rounded {
+    @include btn('rounded');
+}
+.is-outline {
+    @include btn('outline');
+    @include btnBg($bgcolor: false);
+}
+
+//small buttons
+.is-sbtn {
+    @include btn('small-btn');
+}

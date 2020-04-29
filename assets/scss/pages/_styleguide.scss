@@ -1,3 +1,30 @@
+$sgh-height : 70px !default;
+hr {
+    border: 0;
+    border-bottom: 1px solid #f3f3f3;
+}
+.styleGuide_header {
+    border-bottom: 1px solid #ddd;
+    padding: 0 15px;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0,0.8);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: $sgh-height;
+    h1,a {
+        color: var(--white);
+    }
+    a {
+        border-color:inherit;
+    }
+}
 .styleGuide {
     display: flex;
 }
@@ -6,15 +33,18 @@
     border-right: 1px solid rgba(0,0,0,.05);
     max-width: 220px;
     flex-basis: 220px;
-    max-height: 100vh;
+    height: calc(100vh - #{$sgh-height});
     overflow-y: auto;
+    position: sticky;
+    top: $sgh-height;
+    padding-top: 20px;
         a {
             font-size: 16px;
             color:rgba(0,0,0,.75);
             display: block;
             padding: 8px 15px;
             &:hover {
-                background-color: #f8f8f8;
+                background-color: #f3f3f3;
                 color:#000;
             }
         }
@@ -25,8 +55,15 @@
 .content {
     width: calc(100% - 230px);
     padding: 20px;
-    details > div {
-        padding: 30px 20px;
+    details {
+        &[open] {
+                summary {
+                    border-bottom: 1px solid #ddd;
+                }
+        }
+        > div {
+            padding: 30px 20px; 
+        }
     }
     summary {
         display: list-item;
@@ -35,9 +72,6 @@
         background: #f9f9f9;
         cursor: pointer;
         outline: none;
-        details[open] & {
-            border-bottom: 1px solid #ddd;
-        }
     }
     .spacer {
         margin-bottom: 15px;
@@ -45,7 +79,7 @@
         padding: 15px;
     }
     .fontSize {
-        background: var(--info);
+        background: var(--primary);
         padding: 4px 10px;
         font-size: 1rem;
         font-weight: 400;
@@ -74,4 +108,8 @@
         }
 
     }
+}
+
+main {
+    margin-top: $sgh-height;
 }
