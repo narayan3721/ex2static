@@ -8,6 +8,7 @@ $btn-color: (
 // Default values
 $btn-padding: 0.5rem 1rem !default;
 $btn-padding-small: 0.25rem 0.75rem !default;
+$btn-font-family: var(--font-family-main);
 $btn-font-size : 0.85rem !default;
 $btn-font-size-small: 0.8rem !default;
 
@@ -15,6 +16,7 @@ $btn-font-size-small: 0.8rem !default;
 @mixin btn-reset() {
     font-size:$btn-font-size;
     padding: $btn-padding;
+    font-family: $btn-font-family;
     display: inline-block;
     font-weight: 400;
     color: var(--text-color);
@@ -27,6 +29,7 @@ $btn-font-size-small: 0.8rem !default;
     line-height: 1.5;
     outline: none;
     border-radius: 0.25rem;
+    min-width: 80px;
 }
 
 // Types of button flat, outline , rounded , small

@@ -8,9 +8,7 @@ html {
   line-height: 1.15; 
   -webkit-text-size-adjust: 100%; 
 }
-body {
-  margin: 0;
-}
+
 ul[class],ol[class] {
   padding: 0;
   margin: 0;
@@ -36,7 +34,7 @@ img {
   border-style: none;
   max-width: 100%;
   height: auto;
-  display: block;
+  vertical-align: middle;
 }
 button,
 input,

@@ -1,3 +1,27 @@
 // -----------------------------------------------------------------------------
 // This file contains CSS helper classes.
 // -----------------------------------------------------------------------------
+
+//order 1 to 4
+@for $i from 1 to 4 {
+    .order-#{$i} {
+        order: $i;
+    }
+}
+
+.text-white {
+    color: #fff;
+}
+
+.d-flex {
+    display: flex;
+}
+// .flex-row {
+//     flex-direction: row;
+// }
+.is-center {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+}

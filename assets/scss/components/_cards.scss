@@ -1,0 +1,103 @@
+$card-width : 400px;
+$card-padding : 1rem;
+
+.card {
+    max-width: $card-width;
+    @extend .d-flex;
+    flex-flow: column wrap;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    margin-bottom: 1rem;
+    position: relative;
+    &-body {
+        padding: $card-padding;
+        flex: 1 1 auto;
+    }
+    &-footer {
+        padding: $card-padding;
+    }
+    &-imgFull {
+        position: relative;
+        min-height: 240px;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    &-text {
+        font-size: 14px;
+    }
+    &-title {
+        font-size: 1rem;
+        margin-bottom: 3px;
+    }
+    &-desc {
+        flex: 1;
+    }
+    // description at bottom
+    .is-bottom {
+        @extend .d-flex;
+        justify-content: flex-end;
+        flex-flow: column wrap;
+        align-items: flex-start;
+    }
+
+
+}
+//for bg image
+.card-img-overlay {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    padding: 1.25rem;
+    z-index: 1;
+    &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.24);
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+}
+//for left image and right desc
+.is-ltr {
+    .card-img {
+        width: 64px;
+        margin-right: 15px;
+        margin-bottom: 0;
+        &.order-2 {
+            margin-right: 0;
+        }
+        img {
+            background-color: var(----secondary);
+            object-fit: cover;
+            width: 100%;
+            min-height: 64px;
+            margin-top: 3px;
+        }
+    }
+    .card-desc {
+        font-size: 13px;
+        &.order-1 {
+            margin-right: 15px;
+        }
+    }
+    .card-body {
+        // &:last-child p {
+        //     margin-bottom: 0;
+        // }
+    }
+}
+
+
+//not use only for sstyling
+
+
