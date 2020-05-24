@@ -25,11 +25,10 @@
 // 5. Components
 @import
   'components/button',
-  'components/cards';
+  'components/cards',
+  'components/alerts';
 
 // 6. Page-specific styles
-@import
-  'pages/styleguide';
 
 // 7. Themes
 @import

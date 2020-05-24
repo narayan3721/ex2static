@@ -1,6 +1,6 @@
 // theming button color
 $btn-color: (
-    "primary": #007bff,
+    "primary": #1c7ed6,
     "secondary": #dc3545,
     "dark": #000
 );
@@ -47,6 +47,9 @@ $btn-font-size-small: 0.8rem !default;
         padding: $btn-padding-small;
         font-size: $btn-font-size-small;
     }
+    @else if $btn-type == 'full' {
+        width: 100%;
+    }
 }
 
 // Automatically pick color
@@ -91,19 +94,35 @@ $btn-font-size-small: 0.8rem !default;
 .btn {
     @include btn-reset();
 }
-.is-flat {
-    @include btn('flat');
-    @include btnBg($bgcolor: true);
-}
-.is-rounded {
-    @include btn('rounded');
-}
-.is-outline {
-    @include btn('outline');
-    @include btnBg($bgcolor: false);
+
+// Button modifier
+.is {
+    &-flat {
+        @include btn('flat');
+        @include btnBg($bgcolor: true);
+    }
+    &-rounded {
+        @include btn('rounded');
+    }
+    &-outline {
+        @include btn('outline');
+        @include btnBg($bgcolor: false);
+    }
+    &-fullbtn {
+        @include btn('full');
+    }
+    &-sbtn {
+        @include btn('small-btn');
+    }
 }
 
-//small buttons
-.is-sbtn {
-    @include btn('small-btn');
+// Button groups
+.btn-group {
+    margin-bottom: 10px;
+    .btn {
+        margin-right: 10px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
 }

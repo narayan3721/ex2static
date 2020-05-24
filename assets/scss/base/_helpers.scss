@@ -3,25 +3,51 @@
 // -----------------------------------------------------------------------------
 
 //order 1 to 4
-@for $i from 1 to 4 {
+@for $i from 1 to 3 {
     .order-#{$i} {
         order: $i;
     }
 }
 
-.text-white {
-    color: #fff;
+//text helper css
+.text {
+    &-white {
+        color: #fff;
+    }
+    &-center {
+        text-align: center;
+    }
 }
 
-.d-flex {
-    display: flex;
+//element modifier 
+.is {
+    &-flex {
+        display: flex;
+    }
+    &-alignCenter {
+        align-items: center;
+    }
+    &-flexitem_Center {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    &-spaceBw {
+        justify-content: space-between;
+    }
+    &-circle {
+        border-radius: 50%;
+    }
+    &-flexitem_Bottom {
+        @extend .is-flex;
+        justify-content: flex-end;
+        flex-flow: column wrap;
+        align-items: flex-start;
+    }
+    &-sb_ac {
+        @extend .is-spaceBw;
+        @extend .is-alignCenter;
+    }
 }
-// .flex-row {
-//     flex-direction: row;
-// }
-.is-center {
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    justify-content: center;
-}
+
