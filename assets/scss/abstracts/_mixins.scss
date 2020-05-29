@@ -2,6 +2,12 @@
 // This file contains all application-wide Sass mixins.
 // -----------------------------------------------------------------------------
 
+//display flex
+%flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 
 // image fit mixins
 @mixin imgFit {

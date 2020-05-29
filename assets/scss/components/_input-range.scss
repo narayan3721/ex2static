@@ -1,0 +1,47 @@
+//https://brennaobrien.com/blog/2014/05/style-input-type-range-in-every-browser.html
+
+.isp-slidecontainer {
+    width: 40px;
+    position: relative;
+    .isp-panzoom {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 130px;
+        height: 18px;
+        background: gray;
+        outline: none;
+        opacity: 0.9;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+        transform: rotate(90deg);
+        border: 1px solid gray;
+        border-radius: 3px;
+        position: absolute;
+        left: -48px;
+        top: 55px;
+    }
+    .isp-panzoom:hover {
+        opacity: 1;
+    }
+    .isp-panzoom::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 40px;
+        height: 24px;
+        background: blue;
+        cursor: pointer;
+        border-radius: 3px;
+    }
+    .isp-panzoom::-moz-range-thumb {
+        width: 40px;
+        height: 24px;
+        background: blue;
+        cursor: pointer;
+    }
+    input[type=range]::-ms-thumb {
+        width: 40px;
+        height: 24px;
+        background: blue;
+        cursor: pointer;
+    }
+}

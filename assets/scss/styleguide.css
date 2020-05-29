@@ -1,0 +1,144 @@
+hr {
+  border: 0;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.styleGuide_header {
+  border-bottom: 1px solid #ddd;
+  padding: 0 15px;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  z-index: 1000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 70px;
+}
+
+.styleGuide_header h1, .styleGuide_header a {
+  color: var(--white);
+}
+
+.styleGuide_header a {
+  border-color: inherit;
+}
+
+.styleGuide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sidebar {
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  max-width: 220px;
+  -ms-flex-preferred-size: 220px;
+      flex-basis: 220px;
+  height: calc(100vh - 70px);
+  overflow-y: auto;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 70px;
+  padding-top: 20px;
+}
+
+.sidebar a {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.75);
+  display: block;
+  padding: 8px 15px;
+}
+
+.sidebar a:hover {
+  background-color: #f3f3f3;
+  color: #000;
+}
+
+.sidebar h3 {
+  padding: 0 15px;
+}
+
+.content {
+  width: calc(100% - 230px);
+  padding: 20px;
+}
+
+.content details[open] summary {
+  border-bottom: 1px solid #ddd;
+}
+
+.content details > div {
+  padding: 30px 20px;
+}
+
+.content summary {
+  display: list-item;
+  margin: -15px;
+  padding: 15px;
+  background: #f9f9f9;
+  cursor: pointer;
+  outline: none;
+}
+
+.content .spacer {
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  padding: 15px;
+}
+
+.content .fontSize {
+  background: var(--primary);
+  padding: 4px 10px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--white);
+  letter-spacing: 1px;
+  border-radius: 4px;
+  display: inline-block;
+  vertical-align: 5px;
+}
+
+.content .colors {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.content .colors p {
+  min-width: 150px;
+  height: 40px;
+  margin-right: 20px;
+}
+
+.content .colors .blue {
+  background-color: var(--primary);
+}
+
+.content .colors .gray {
+  background-color: var(--gray);
+}
+
+.content .colors .black {
+  background-color: var(--gray-dark);
+}
+
+main {
+  margin-top: 70px;
+}
+
+#cards .card {
+  margin-right: 1rem;
+}
